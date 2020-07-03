@@ -109,7 +109,10 @@ app.post("/repositories/:id/like", (request, response) => {
   } else {
     repository.likes += 1;
 
-    return response.json({ likes: repository.likes });
+    return response.json({
+      id: repository.id,
+      likes: repository.likes,
+    });
   }
 });
 
